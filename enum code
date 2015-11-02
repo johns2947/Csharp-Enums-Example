@@ -16,6 +16,7 @@
   
   int value = (int)y;               // convert enum datatype "y" into an integer which is the Value (index)
   
+  resultLabel.Text = value.ToString();
   
   -------------------------------------------------------------------
   To find the associated Constant of a Value inputted into a textbox:
@@ -25,7 +26,7 @@
   
   var c = (CardType)v;                   // using the name of the enum -i.e "CardType"
   
-  resultLabel.Text = c.ToString();
+  resultLabel.Text = c.ToString();       
   
   
 
