@@ -1,37 +1,40 @@
 // using an Enumeration of a deck of cards (just the card values, not the Suits)
-
+  ( the enum appears at the bottom of the code)
+  
 // how to retrieve either the text string (CardName) (aka the enum Constant) 
 // or the index of the enum (aka enum Value) from an Enumeration
 
 --------------------------------------------------------------------------------
-// To find the associated Value of a given Card Name inputted into a textbox:
+// To find the associated Value of a Constant inputted into a textbox:
  ----------------------------------------------------------------------------------
   string CardName = textbox1.Text;      
   
-  CardType y;             // "CardType" is the Enumeration's datatype and the name of the Enumeration, 
-                          //  so "y" is a variable of datatype CardType
+  CardType y;                       // "CardType" is the name of the Enumeration, 
+                                    //  so "y" is a variable of datatype Enum.CardType
   
   Enum.TryParse(CardName, out y);   // if the CardName matches an entry in the enum, return y
   
-  int value = (int)y;         // convert enum datatype "y" into an integer
+  int value = (int)y;               // convert enum datatype "y" into an integer which is the Value (index)
   
   
-  ---------------------------------------------------------------------------
-  To find the associated Card Name of a Value in the enum:
+  -------------------------------------------------------------------
+  To find the associated Constant of a Value inputted into a textbox:
   --------------------------------------------------------------
   
   int v = Convert.ToInt32(textBox1.Text);
   
-  var c = (CardType)v;
+  var c = (CardType)v;                   // using the name of the enum -i.e "CardType"
   
   resultLabel.Text = c.ToString();
+  
+  
 
 public enum CardType
 {
-  Two = 2,  // forcing index to start at "2" instead of zero
+  Two = 2,      // forcing the Values to start at "2" instead of zero
   Three = 3,
   Four = 4,
-  .....      // enter rest of cards here
+  .....          // enter rest of cards here
   Ten = 10,
   Jack = 11,
   Queen = 12,
