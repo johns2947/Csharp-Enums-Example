@@ -1,4 +1,5 @@
 // using an Enumeration of a deck of cards (just the card values, not the Suits)
+// The name of the Enum is "CardType", so when you see CardType in the code, it is calling the Enum
   ( the enum appears at the bottom of the code)
   
 // how to retrieve either the text string (CardName) (aka the enum Constant) 
@@ -7,26 +8,26 @@
 --------------------------------------------------------------------------------
 // To find the associated Value of a Constant inputted into a textbox:
  ----------------------------------------------------------------------------------
-  string CardName = textbox1.Text;      
+  string CardName = textbox1.Text;  // User enters the name of a card    
   
   CardType y;                       // "CardType" is the name of the Enumeration, 
-                                    //  so "y" is a variable of datatype Enum.CardType
+                                    //  so we instantiate "y" as a variable of datatype Enum.CardType
   
   Enum.TryParse(CardName, out y);   // if the CardName matches an entry in the enum, return y
   
   int value = (int)y;               // convert enum datatype "y" into an integer which is the Value (index)
   
-  resultLabel.Text = value.ToString();
+  resultLabel.Text = value.ToString();  // Outputting the card's value
   
   -------------------------------------------------------------------
   To find the associated Constant of a Value inputted into a textbox:
   --------------------------------------------------------------
   
-  int v = Convert.ToInt32(textBox1.Text);
+  int v = Convert.ToInt32(textBox1.Text);  // User enters an integer to see if it matches a card in the Enum
   
-  var c = (CardType)v;                   // using the name of the enum -i.e "CardType"
-  
-  resultLabel.Text = c.ToString();       
+  var c = (CardType)v;                   // calling the enum named "CardType" and returning the name of the Card
+                                        // that matches the number that the User entered  
+  resultLabel.Text = c.ToString();      // Outputting the card's name   
   
   
 
